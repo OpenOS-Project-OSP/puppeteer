@@ -59,7 +59,7 @@ jobs:
         if: github.event_name != 'pull_request'
 
       - name: Run unit tests
-        uses: nick-invision/retry@v2
+        uses: nick-invision/retry@v4
         env:
           CHROMIUM: true
         with:
@@ -75,7 +75,7 @@ jobs:
           xvfb-run --auto-servernum npm run assert-unit-coverage
 
       - name: Run unit tests on Firefox
-        uses: nick-invision/retry@v2
+        uses: nick-invision/retry@v4
         env:
           FIREFOX: true
           MOZ_WEBRENDER: 0
@@ -132,7 +132,7 @@ jobs:
           npm run unit
 
       - name: Run unit tests on Firefox
-        uses: nick-invision/retry@v2
+        uses: nick-invision/retry@v4
         with:
           max_attempts: 3
           timeout_minutes: 10
@@ -175,7 +175,7 @@ jobs:
           npm run unit
 
       - name: Run unit tests on Firefox
-        uses: nick-invision/retry@v2
+        uses: nick-invision/retry@v4
         continue-on-error: true
         env:
           FIREFOX: true
@@ -213,7 +213,7 @@ jobs:
         run: |
           npm run build
       - name: Run unit tests in headful mode
-        uses: nick-invision/retry@v2
+        uses: nick-invision/retry@v4
         continue-on-error: true
         env:
           CHROMIUM: true
@@ -247,7 +247,7 @@ jobs:
         run: |
           npm run build
       - name: Run unit tests
-        uses: nick-invision/retry@v2
+        uses: nick-invision/retry@v4
         continue-on-error: true
         env:
           CHROMIUM: true
